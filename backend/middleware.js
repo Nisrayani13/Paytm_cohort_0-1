@@ -2,7 +2,7 @@ const jwt =require("jsonwebtoken");
 const { jwtPassword } = require("./config");
 
 function authMiddleware(req,res,next){
-    if(!req.headers.authorization)return res.status(403);
+    if(!req.headers.authorization)return res.status(403).json("Authentication token missing");
 
     let authToken= req.headers.authorization.split(' ')[1];
     try{

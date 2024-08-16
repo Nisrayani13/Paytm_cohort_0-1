@@ -2,12 +2,14 @@ import { SignCard } from "../stylingComponents/SignCard";
 import { InputField } from "../stylingComponents/InputField";
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export function Signup() {
   const [firstName, setfirstName] = useState("");
   const [lastName, setlastName] = useState("");
   const [username, setusername] = useState("");
   const [password, setpassword] = useState("");
+  const navigate=useNavigate();
   return (
     <SignCard
       heading={"Sign Up"}
@@ -24,6 +26,7 @@ export function Signup() {
           password: password
         });
         localStorage.setItem("token",response.data.token);
+        navigate("/dashboard")
       }}
     >
       <InputField
