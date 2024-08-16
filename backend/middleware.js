@@ -5,7 +5,6 @@ function authMiddleware(req,res,next){
     if(!req.headers.authorization)return res.status(403);
 
     let authToken= req.headers.authorization.split(' ')[1];
-    console.log(`authToken is : ${authToken}`);
     try{
         let payload=jwt.verify(authToken,jwtPassword);
         req.userId=payload.userId;
