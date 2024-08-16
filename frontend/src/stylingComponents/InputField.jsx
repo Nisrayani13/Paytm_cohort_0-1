@@ -1,6 +1,6 @@
 import React from "react";
 
-export function InputField({ label, placeholder }) {
+export function InputField({ onChange,label, placeholder }) {
   const id = label.replace(/\s+/g, "_").toLowerCase();
 
   return (
@@ -12,6 +12,7 @@ export function InputField({ label, placeholder }) {
         {label}
       </label>
       <input
+        onChange={onChange}
         type="text"
         id={id}
         className="bg-gray-50 

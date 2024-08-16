@@ -41,6 +41,10 @@ userRouter.post("/signup",async (req,res)=>{
             })
         }
     }
+    else{
+        console.log(req.body);
+        console.log(userZodSchema.safeParse(req.body).success)
+    }
     return res.status(411).json({
         message: "Email already taken / Incorrect inputs"
     })
@@ -76,8 +80,6 @@ userRouter.put("/",authMiddleware, async (req,res)=>{
 
 userRouter.get("/bulk",async (req,res)=>{
     let name=req.query.filter;
-    console.log(`name : ${name}`)
-    console.log(`query: ${req.query}`)
     let users=await User.find({
         $or:[
             {firstName:name},
