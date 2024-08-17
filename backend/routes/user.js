@@ -1,9 +1,11 @@
+require("dotenv").config();
+
 const express = require("express");
 const z = require("zod");
 const jwt = require("jsonwebtoken");
 
 const userRouter = express.Router();
-const { jwtPassword } = require("../config");
+const jwtPassword=process.env.JWT_PASSWORD;
 const { User, Account } = require("../db");
 const { authMiddleware } = require("../middleware");
 

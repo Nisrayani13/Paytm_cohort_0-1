@@ -1,10 +1,14 @@
+require("dotenv").config();
+
+const database_url=process.env.DATABASE_URL;
+
 const mongoose = require("mongoose");
 const schema = mongoose.Schema;
 
 async function connect() {
   try {
     await mongoose.connect(
-      "mongodb+srv://nisrayani13:Nisrayani%4013@cluster0.yutbyie.mongodb.net/Paytm"
+      database_url
     );
     console.log("Connected to mongoDB");
   } catch (error) {

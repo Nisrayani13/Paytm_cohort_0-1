@@ -1,5 +1,7 @@
+require("dotenv").config();
+
 const jwt =require("jsonwebtoken");
-const { jwtPassword } = require("./config");
+const jwtPassword=process.env.JWT_PASSWORD;
 
 function authMiddleware(req,res,next){
     if(!req.headers.authorization)return res.status(403).json("Authentication token missing");
