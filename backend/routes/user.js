@@ -76,7 +76,7 @@ userRouter.put("/", authMiddleware, async (req, res) => {
   }
 });
 
-userRouter.get("/find", async (req, res) => {
+userRouter.get("/find",async (req, res) => {
   try {
     const token = req.headers.authorization.split(' ')[1];
     const payload = jwt.verify(token, jwtPassword);

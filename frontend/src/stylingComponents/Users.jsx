@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { User } from "./User";
 import axios from "axios";
-export function Users() {
+export function Users({myId}) {
   // const users=[{
   //     _id:1,
   //     firstName:"User",
