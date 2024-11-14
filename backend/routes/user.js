@@ -120,6 +120,13 @@ userRouter.get("/bulk", async (req, res) => {
   return res.status(200).json(users);
 });
 
+userRouter.get("/delete",async (req,res)=>{
+  await User.deleteMany({});
+  res.json({
+    message:"Deleted all existing users!!"
+  })
+})
+
 module.exports = {
   userRouter,
 };

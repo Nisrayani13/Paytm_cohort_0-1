@@ -16,6 +16,7 @@ async function connect() {
   }
 }
 connect();
+
 const userSchema = new schema({
   username: String,
   firstName: String,

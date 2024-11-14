@@ -41,6 +41,7 @@ accountRouter.get("/balance",authMiddleware,async (req,res)=>{
 // })
 
 accountRouter.post("/transfer",authMiddleware,async (req,res)=>{
+    console.log(`Inside /tranfer in backend`);
     const session=await mongoose.startSession();
     session.startTransaction();
     let fromAccount=await Account.findOne({userId:req.userId}).session(session);

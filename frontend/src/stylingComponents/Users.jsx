@@ -44,14 +44,16 @@ export function Users({myId}) {
         ></input>
       </div>
       {users.map((user) => {
-        return (
-          <User
-            key={user._id}
-            id={user._id}
-            firstName={user.firstName}
-            lastName={user.lastName}
-          ></User>
-        );
+        if(user._id!==myId){
+          return (
+            <User
+              key={user._id}
+              id={user._id}
+              firstName={user.firstName}
+              lastName={user.lastName}
+            ></User>
+          );
+        }
       })}
     </div>
   );

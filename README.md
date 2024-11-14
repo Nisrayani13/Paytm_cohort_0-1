@@ -12,9 +12,10 @@ To get started, first clone the repository using the following command:
 git clone https://github.com/your-username/your-repo-name.git
 ```
 
-#### 2. Update .env file
+#### 2. Create a .env file backend folder and add your DATABASE_URL and JWT_PASSWORD
 ```bash
-Create a .env file backend folder and add your DB_URL and JWT_PASSWORD
+DATABASE_URL = your_db_url
+JWT_PASSWORD = your_jwt_password
 ```
 
 #### 3. Backend
